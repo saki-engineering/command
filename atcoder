@@ -27,10 +27,13 @@ while getopts c:t:l:s:h OPT; do
         t ) FLG_T="TRUE" ; VALUE_T="$OPTARG" ;;
         l ) FLG_L="TRUE" ; VALUE_L="$OPTARG" ;;
         s ) FLG_S="TRUE" ; VALUE_S="$OPTARG" ;;
+        h ) FLG_H="TRUE" ;;
     esac
 done
 
-if [ "$FLG_C" != "TRUE" ]; then
+if [ "$FLG_H" == "TRUE" ]; then
+    usage
+elif [ "$FLG_C" != "TRUE" ]; then
     lack_of_necessary_param
 else
     task="?f.Task="
