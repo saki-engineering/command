@@ -13,5 +13,7 @@ Options:
 EOF
 }
 
-echo "$(basename ${0})"
-echo "${1}"
+baseurl="https://atcoder.jp/contests/"
+endpoint="/submissions?"
+
+open "${baseurl}${1}${endpoint}"
