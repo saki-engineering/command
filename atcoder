@@ -52,10 +52,120 @@ else
 
     language="&f.Language="
     if [ "$FLG_L" == "TRUE" ]; then
-        if [ "$VALUE_L" == "cgcc" ]; then
+        if [ "$VALUE_L" == "bash" ]; then
+            l_no="3001"
+        elif [ "$VALUE_L" == "Cgcc" ]; then
             l_no="3002"
-        elif [ "$VALUE_L" == "python3" ]; then
+        elif [ "$VALUE_L" == "C++14gcc" ]; then
+            l_no="3003"
+        elif [ "$VALUE_L" == "Cclang" ]; then
+            l_no="3004"
+        elif [ "$VALUE_L" == "C++14clang" ]; then
+            l_no="3005"
+        elif [ "$VALUE_L" == "C#" ]; then
+            l_no="3006"
+        elif [ "$VALUE_L" == "Clojure" ]; then
+            l_no="3007"
+        elif [ "$VALUE_L" == "CommonLisp" ]; then
+            l_no="3008"
+        elif [ "$VALUE_L" == "DDMD" ]; then
+            l_no="3009"
+        elif [ "$VALUE_L" == "DLDC" ]; then
+            l_no="3010"
+        elif [ "$VALUE_L" == "DGDC" ]; then
+            l_no="3011"
+        elif [ "$VALUE_L" == "Fortran" ]; then
+            l_no="3012"
+        elif [ "$VALUE_L" == "Go" ]; then
+            l_no="3013"
+        elif [ "$VALUE_L" == "Haskell" ]; then
+            l_no="3014"
+        elif [ "$VALUE_L" == "Java7" ]; then
+            l_no="3015"
+        elif [ "$VALUE_L" == "Java8" ]; then
+            l_no="3016"
+        elif [ "$VALUE_L" == "JavaScript" ]; then
+            l_no="3017"
+        elif [ "$VALUE_L" == "OCaml" ]; then
+            l_no="3018"
+        elif [ "$VALUE_L" == "Pascal" ]; then
+            l_no="3019"
+        elif [ "$VALUE_L" == "Perl" ]; then
+            l_no="3020"
+        elif [ "$VALUE_L" == "PHP" ]; then
+            l_no="3021"
+        elif [ "$VALUE_L" == "Python2" ]; then
+            l_no="3022"
+        elif [ "$VALUE_L" == "Python3" ]; then
             l_no="3023"
+        elif [ "$VALUE_L" == "Ruby" ]; then
+            l_no="3024"
+        elif [ "$VALUE_L" == "Scala" ]; then
+            l_no="3025"
+        elif [ "$VALUE_L" == "Scheme" ]; then
+            l_no="3026"
+        elif [ "$VALUE_L" == "Text" ]; then
+            l_no="3027"
+        elif [ "$VALUE_L" == "VisualBasic" ]; then
+            l_no="3028"
+        elif [ "$VALUE_L" == "C++gcc" ]; then
+            l_no="3029"
+        elif [ "$VALUE_L" == "C++clang" ]; then
+            l_no="3030"
+        elif [ "$VALUE_L" == "C++clang" ]; then
+            l_no="3030"
+        elif [ "$VALUE_L" == "Objective-Cgcc" ]; then
+            l_no="3501"
+        elif [ "$VALUE_L" == "Objective-Cclang" ]; then
+            l_no="3502"
+        elif [ "$VALUE_L" == "Swift" ]; then
+            l_no="3503"
+        elif [ "$VALUE_L" == "Rust" ]; then
+            l_no="3504"
+        elif [ "$VALUE_L" == "Sed" ]; then
+            l_no="3505"
+        elif [ "$VALUE_L" == "Awk" ]; then
+            l_no="3506"
+        elif [ "$VALUE_L" == "Brainfuck" ]; then
+            l_no="3507"
+        elif [ "$VALUE_L" == "StandardML" ]; then
+            l_no="3508"
+        elif [ "$VALUE_L" == "PyPy2" ]; then
+            l_no="3509"
+        elif [ "$VALUE_L" == "PyPy3" ]; then
+            l_no="3510"
+        elif [ "$VALUE_L" == "Crystal" ]; then
+            l_no="3511"
+        elif [ "$VALUE_L" == "F#" ]; then
+            l_no="3512"
+        elif [ "$VALUE_L" == "Unlambda" ]; then
+            l_no="3513"
+        elif [ "$VALUE_L" == "Lua" ]; then
+            l_no="3514"
+        elif [ "$VALUE_L" == "LuaJIT" ]; then
+            l_no="3515"
+        elif [ "$VALUE_L" == "MoonScript" ]; then
+            l_no="3516"
+        elif [ "$VALUE_L" == "Ceylon" ]; then
+            l_no="3517"
+        elif [ "$VALUE_L" == "Julia" ]; then
+            l_no="3518"
+        elif [ "$VALUE_L" == "Octave" ]; then
+            l_no="3519"
+        elif [ "$VALUE_L" == "Nim" ]; then
+            l_no="3520"
+        elif [ "$VALUE_L" == "TypeScript" ]; then
+            l_no="3521"
+        elif [ "$VALUE_L" == "Perl6" ]; then
+            l_no="3522"
+        elif [ "$VALUE_L" == "Kotlin" ]; then
+            l_no="3523"
+        elif [ "$VALUE_L" == "PHP7" ]; then
+            l_no="3524"
+        elif [ "$VALUE_L" == "COBOLFixed" ]; then
+            l_no="3525"
+        elif [ "$VALUE_L" == "COBOLFree" ]; then
+            l_no="3526"
         fi
         language=${language}${l_no}
     fi
