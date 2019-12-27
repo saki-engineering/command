@@ -1,3 +1,17 @@
 #!/bin/sh
 
-echo "自作コマンド"
+function usage {
+    cat <<EOF
+$(basename ${0}) is a tool for ...
+
+Usage:
+    $(basename ${0}) [command] [<options>]
+
+Options:
+    --version, -v     print $(basename ${0}) version
+    --help, -h        print this
+EOF
+}
+
+echo "$(basename ${0})"
+echo "${1}"
