@@ -21,13 +21,12 @@ function lack_of_necessary_param() {
 baseurl="https://atcoder.jp/contests/"
 endpoint="/submissions"
 
-while getopts c:t:l:s:u:h OPT; do
+while getopts c:t:l:s:h OPT; do
     case $OPT in
         c ) FLG_C="TRUE" ; VALUE_C="$OPTARG" ;;
         t ) FLG_T="TRUE" ; VALUE_T="$OPTARG" ;;
         l ) FLG_L="TRUE" ; VALUE_L="$OPTARG" ;;
         s ) FLG_S="TRUE" ; VALUE_S="$OPTARG" ;;
-        u ) FLG_U="TRUE" ; VALUE_U="$OPTARG" ;;
     esac
 done
 
@@ -38,5 +37,21 @@ else
     if [ "$FLG_T" == "TRUE" ]; then
         task=${task}${VALUE_C}_${VALUE_T}
     fi
-    echo "${baseurl}${VALUE_C}${endpoint}${task}"
+
+    language="&f.Language="
+    if [ "$FLG_L" == "TRUE" ]; then
+        if [ "$VALUE_L" == "cgcc" ]; then
+            l_no="3002"
+        elif [ "$VALUE_L" == "python3" ]; then
+            l_no="3023"
+        fi
+        language=${language}${l_no}
+    fi
+
+    status="&f.Status="
+    if [ "$FLG_S" == "TRUE" ]; then
+        status=${status}${VALUE_S}
+    fi
+
+    open "${baseurl}${VALUE_C}${endpoint}${task}${language}${status}"
 fi;
