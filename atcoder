@@ -14,6 +14,81 @@ Options:
     -l        specify language used in submissions
     -s        specify status in submissions
     -h        print this
+
+Value of option -c
+    abcXXX      ABC contest  e.g) ABC001 → -c abc001
+    arcXXX      ARC contest  e.g) ARC001 → -c arc001
+    agcXXX      AGC contest  e.g) AGC001 → -c agc001
+
+    values of contests excepting ABC, ARC and AGC are using XXX in contest URL https://atcoder.jp/contests/XXX
+
+Value of option -t
+    use task number in lowercase. e.g) -t a
+
+Value of option -l
+    following language can be used in option -l
+
+    bash
+    Cgcc
+    C++14gcc
+    Cclang
+    C++14clang
+    C#
+    Clojure
+    CommonLisp
+    DDMD
+    DLDC
+    DGDC
+    Fortran
+    Go
+    Haskell
+    Java7
+    Java8
+    JavaScript
+    OCaml
+    Pascal
+    Perl
+    PHP
+    Python2
+    Python3
+    Ruby
+    Scala
+    Scheme
+    Text
+    VisualBasic
+    C++gcc
+    C++clang
+    C++clang
+    Objective-Cgcc
+    Objective-Cclang
+    Swift
+    Rust
+    Sed
+    Awk
+    Brainfuck
+    StandardML
+    PyPy2
+    PyPy3
+    Crystal
+    F#
+    Unlambda
+    Lua
+    LuaJIT
+    MoonScript
+    Ceylon
+    Julia
+    Octave
+    Nim
+    TypeScript
+    Perl6
+    Kotlin
+    PHP7
+    COBOLFixed
+    COBOLFree
+
+Value of option -s
+    use Status name in uppercase. e.g) -s AC
+
 EOF
 }
 
