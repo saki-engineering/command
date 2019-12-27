@@ -19,7 +19,7 @@ function lack_of_necessary_param() {
 }
 
 baseurl="https://atcoder.jp/contests/"
-endpoint="/submissions?"
+endpoint="/submissions"
 
 while getopts c:t:l:s:u:h OPT; do
     case $OPT in
@@ -34,5 +34,9 @@ done
 if [ "$FLG_C" != "TRUE" ]; then
     lack_of_necessary_param
 else
-    echo "${baseurl}${VALUE_C}${endpoint}"
+    task="?f.Task="
+    if [ "$FLG_T" == "TRUE" ]; then
+        task=${task}${VALUE_C}_${VALUE_T}
+    fi
+    echo "${baseurl}${VALUE_C}${endpoint}${task}"
 fi;
