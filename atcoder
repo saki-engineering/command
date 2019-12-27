@@ -2,14 +2,18 @@
 
 function usage {
     cat <<EOF
-$(basename ${0}) is a tool for ...
+$(basename ${0}) is a tool for searching submissions on the atcoder.
 
 Usage:
-    $(basename ${0}) [command] [<options>]
+    $(basename ${0}) [options]
 
 Options:
-    --version, -v     print $(basename ${0}) version
-    --help, -h        print this
+    -v        print $(basename ${0}) version
+    -c        specify contest (this option is required when you use this command.)
+    -t        specify task in contest
+    -l        specify language used in submissions
+    -s        specify status in submissions
+    -h        print this
 EOF
 }
 
@@ -18,21 +22,26 @@ function lack_of_necessary_param() {
   exit 1
 }
 
+version="1.0.0"
+
 baseurl="https://atcoder.jp/contests/"
 endpoint="/submissions"
 
-while getopts c:t:l:s:h OPT; do
+while getopts c:t:l:s:hv OPT; do
     case $OPT in
         c ) FLG_C="TRUE" ; VALUE_C="$OPTARG" ;;
         t ) FLG_T="TRUE" ; VALUE_T="$OPTARG" ;;
         l ) FLG_L="TRUE" ; VALUE_L="$OPTARG" ;;
         s ) FLG_S="TRUE" ; VALUE_S="$OPTARG" ;;
         h ) FLG_H="TRUE" ;;
+        v ) FLG_V="TRUE" ;;
     esac
 done
 
 if [ "$FLG_H" == "TRUE" ]; then
     usage
+elif [ "$FLG_V" == "TRUE" ]; then
+    echo $version
 elif [ "$FLG_C" != "TRUE" ]; then
     lack_of_necessary_param
 else
