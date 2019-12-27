@@ -13,7 +13,26 @@ Options:
 EOF
 }
 
+function lack_of_necessary_param() {
+  echo "-cオプションでのコンテスト指定は必須です。"
+  exit 1
+}
+
 baseurl="https://atcoder.jp/contests/"
 endpoint="/submissions?"
 
-open "${baseurl}${1}${endpoint}"
+while getopts c:t:l:s:u:h OPT; do
+    case $OPT in
+        c ) FLG_C="TRUE" ; VALUE_C="$OPTARG" ;;
+        t ) FLG_T="TRUE" ; VALUE_T="$OPTARG" ;;
+        l ) FLG_L="TRUE" ; VALUE_L="$OPTARG" ;;
+        s ) FLG_S="TRUE" ; VALUE_S="$OPTARG" ;;
+        u ) FLG_U="TRUE" ; VALUE_U="$OPTARG" ;;
+    esac
+done
+
+if [ "$FLG_C" != "TRUE" ]; then
+    lack_of_necessary_param
+else
+    echo "${baseurl}${VALUE_C}${endpoint}"
+fi;
